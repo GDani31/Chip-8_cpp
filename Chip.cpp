@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <windows.h> // Beep -> need to make this platform independent
 
 Chip::Chip():
     memory(4096),
@@ -389,7 +390,8 @@ void Chip::run()
     if(sound_timer > 0)
     {
         sound_timer--;
-        // Beep
+        Beep(523,500); // need to make this platform independent
+        
     }
 
     if(delay_timer > 0)
